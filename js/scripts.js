@@ -41,3 +41,46 @@ console.log(hasFour);
 data.map((user) => (user.newsletter = false));
 
 console.log(data);
+
+// 6 - filter
+const drivers = data.filter((user) => user.driverLicense);
+
+console.log(drivers);
+
+// 7 - reduce
+
+const sallariesSum = data.reduce(
+  (totalSallary, user) => (totalSallary += user.sallary),
+  0
+);
+
+console.log(sallariesSum);
+
+// 8 - forEach
+const showUserNames = (users) => {
+  users.forEach((user) => {
+    console.log(`Olá ${user.name}!`);
+  });
+};
+
+showUserNames(data);
+
+// 9 - some
+let someoneWithNesletter = data.some((user) => user.newsletter);
+
+console.log(someoneWithNesletter);
+
+data[0].newsletter = true;
+
+someoneWithNesletter = data.some((user) => user.newsletter);
+
+console.log(someoneWithNesletter);
+
+// 10 - every
+const everyUserHasName = data.every((user) => user.name);
+
+console.log(everyUserHasName);
+
+const everyUserHasGoodSallary = data.every((user) => user.sallary > 2000);
+
+console.log(everyUserHasGoodSallary);
